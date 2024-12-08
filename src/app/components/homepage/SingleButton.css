@@ -1,0 +1,28 @@
+.buttonEffect {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.buttonEffect > p {
+  transition: color 100ms ease-in-out;
+}
+.buttonEffect::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(213, 236, 194);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  /* transform-origin: left; */
+  transition: transform 300ms ease-in-out;
+  z-index: -1;
+}
+
+.buttonEffect:hover::before {
+  transform: scaleX(1);
+}
+.buttonEffect:hover > * {
+  color: black;
+}
